@@ -1,0 +1,5 @@
+REM Test payload3
+STRING x
+DELAY 3000
+STRING Y
+ENTER
