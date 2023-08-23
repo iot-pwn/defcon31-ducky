@@ -13,6 +13,11 @@
 # Buzzer - GPIO7
 
 import asyncio
+import neopixel
+import board
+from board import *
+from duckyinpython import *
+import simpleio
 
 RED = (255, 0, 0)
 YELLOW = (255, 150, 0)
@@ -48,6 +53,11 @@ inBlinkeyMode = False
 inMenu = False
 
 menuStarted = False
+
+#ORDER = neopixel.GRB
+ORDER=(1,0,2,3)
+pixel = neopixel.NeoPixel(board.GP6, 1, brightness=0.2, auto_write=False, pixel_order=ORDER)
+#setNeoPixelColor(pixel,GREEN)
 
 def setNeoPixelColor(pixel, color):
     pixel.fill(color)

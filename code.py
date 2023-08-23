@@ -63,8 +63,8 @@ button2Pushed = button2.rose
 
 
 #ORDER = neopixel.GRB
-ORDER=(1,0,2,3)
-pixel = neopixel.NeoPixel(board.GP6, 1, brightness=0.2, auto_write=False, pixel_order=ORDER)
+#ORDER=(1,0,2,3)
+#pixel = neopixel.NeoPixel(board.GP6, 1, brightness=0.2, auto_write=False, pixel_order=ORDER)
 setNeoPixelColor(pixel,GREEN)
 
 eyes_enable = DigitalInOut(board.GP8)
