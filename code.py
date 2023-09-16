@@ -80,6 +80,7 @@ led_state = False
 progStatus = False
 progStatus = getProgrammingStatus()
 
+
 if(progStatus == True):
     print("Update your payload")
 else:
@@ -87,7 +88,7 @@ else:
     payload = selectPayload()
     print("Running ", payload)
     setNeoPixelColor(pixel,BLUE)
-    runScript(payload)
+    duckyinpython.fileToRun = payload
     setNeoPixelColor(pixel,RED)
     print("Done")
 
@@ -104,6 +105,7 @@ inMenu = False
 menuStarted = False
 
 
+
 #led_state = False
 
 async def main_loop():
@@ -113,10 +115,11 @@ async def main_loop():
     button_task = asyncio.create_task(monitor_buttons(button1,button2))
     random_beep_task = asyncio.create_task(randomBeepTask())
     siren_task = asyncio.create_task(sirenTask())
+    script_task = asyncio.create_task(runScriptTask())
     print("Starting Wifi")
     startWiFi()
     print("Starting Web Service")
     webservice_task = asyncio.create_task(startWebService())
-    await asyncio.gather(pico_led_task, neopixel_task,button_task,random_beep_task,siren_task,webservice_task)
+    await asyncio.gather(pico_led_task, neopixel_task,button_task,random_beep_task,siren_task,webservice_task,script_task)
 
 asyncio.run(main_loop())

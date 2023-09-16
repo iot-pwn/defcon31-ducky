@@ -16,6 +16,7 @@ import asyncio
 import neopixel
 import board
 from board import *
+import duckyinpython
 from duckyinpython import *
 import simpleio
 
@@ -162,7 +163,7 @@ async def sirenTask():
 
 
 async def monitor_buttons(button1, button2):
-    global inBlinkeyMode, inMenu, enableRandomBeep, enableSirenMode,pixel
+    global inBlinkeyMode, inMenu, enableRandomBeep, enableSirenMode,pixel, fileToRun
     print("starting monitor_buttons")
     sawButton1 = False
     sawButton2 = False
@@ -215,8 +216,8 @@ async def monitor_buttons(button1, button2):
                     # Run selected payload
                     setNeoPixelColor(pixel,RED)
                     payload = selectPayload()
-                    print("Running ", payload)
-                    runScript(payload)
+                    duckyinpython.fileToRun = payload
+                    print("Running ", duckyinpython.fileToRun)
                     print("Done")
                     setNeoPixelColor(pixel,GREEN)
                 button1Down = False
