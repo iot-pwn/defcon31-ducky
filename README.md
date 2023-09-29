@@ -38,3 +38,6 @@ To have the Pico W show up on the host computer as a USB Mass Storage device, se
 * Button 2 will make the connected Neopixel blick in multicolor mode.
 
 Enjoy your DEF CON31 Ducky.
+
+![Paritally assembled kit](images/dc31-partial-kit.jpg)  
+![Fully assembled kit](images/dc31-full-kit.jpg)
