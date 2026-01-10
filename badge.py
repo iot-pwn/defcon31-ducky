@@ -19,6 +19,7 @@ from board import *
 import duckyinpython
 from duckyinpython import *
 import simpleio
+from pins import *
 
 RED = (255, 0, 0)
 YELLOW = (255, 150, 0)
@@ -162,7 +163,7 @@ async def sirenTask():
         await asyncio.sleep(0.01)
 
 
-async def monitor_buttons(button1, button2):
+async def monitor_buttons():
     global inBlinkeyMode, inMenu, enableRandomBeep, enableSirenMode,pixel, fileToRun
     print("starting monitor_buttons")
     sawButton1 = False
